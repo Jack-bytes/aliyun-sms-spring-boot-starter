@@ -24,6 +24,30 @@
             <artifactId>dysmsapi20170525</artifactId>
             <version>2.0.1</version>
         </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter</artifactId>-->
+        <!--        </dependency>-->
+
+        <!-- 自动配置需要用到的注解等都在这个包或者其依赖包下 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <!-- 解析会在application.yml中用到的key-value, 生成文件META-INF/spring-configuration-metadata.json -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 生成自动配置相关的元数据(jar包中: META-INF/spring-autoconfigure-metadata.properties), 减少启动时间, 不是必须的, 但是最好加上 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure-processor</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
