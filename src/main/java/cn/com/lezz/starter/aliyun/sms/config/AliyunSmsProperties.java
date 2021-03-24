@@ -28,7 +28,7 @@ public class AliyunSmsProperties {
 
     @Getter
     @Setter
-    protected static class Sms {
+    public static class Sms {
 
         /**
          * 节点URL, 国内除了北京都是这个URL;
@@ -36,7 +36,7 @@ public class AliyunSmsProperties {
         private String endpoint = "dysmsapi.aliyuncs.com";
 
         /**
-         * 签名, 可以配置多个, 默认使用第一个, 可以用index指定使用哪个;
+         * 签名, 阿里云控制台申请获取, 可以配置多个, 默认使用第一个, 可以用index指定使用哪个, index从0开始;
          *
          * application.yml中的配置方式:
          *
@@ -55,7 +55,7 @@ public class AliyunSmsProperties {
         private List<String> signNames;
 
         /**
-         * 短信模板代码, 需要从阿里云控制台获取, 可以配置多个, 默认用第一个, 可以用index指定使用哪个;
+         * 短信模板代码, 需要从阿里云控制台获取, 可以配置多个, 默认用第一个, 可以用index指定使用哪个, index从0开始;
          *
          * application.yml中配置方式同上;
          *   template-codes:
@@ -67,15 +67,15 @@ public class AliyunSmsProperties {
         private List<String> templateCodes;
 
         /**
-         * 和模板代码对应的模板参数名, 必须和模板代码一一对应, 没有的用[]占位;
+         * 和模板代码对应的模板信息中参数名(key), 必须和模板代码一一对应, 没有的用[]占位;
          *
          * application.yml中配置方式:
-         *   template-params:
+         *   template-param-keys:
          *     - [name, code]
          *     - []
          *     - [name, code]
          */
-        private List<List<String>> templateParams;
+        private List<List<String>> templateParamKeys;
 
     }
 
