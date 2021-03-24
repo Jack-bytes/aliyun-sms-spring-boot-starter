@@ -91,7 +91,7 @@ public class AliyunSms {
         try {
             response = client.sendSms(request);
         } catch (Exception e) {
-            LOG.error("短信发送失败, 未知错误, 手机号: {}!", phoneNumbers);//测试下什么情况下会抛异常??????????????????????????????????????
+            LOG.error("短信发送失败, 请检查endpoint, accessKeyId, accessKeySecret是否正确或稍后重试, 手机号: {}!", phoneNumbers);
             e.printStackTrace();
             return false;
         }
