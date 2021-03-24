@@ -11,15 +11,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnClass
-@ConditionalOnMissingBean
-@EnableConfigurationProperties(AliyunSmsProperties.class)
+// 指定类存在这个自动配置类才生效. 这个注解在这里是没必要的, 以为业务核心和自动配置在一个jar,
+// 但是一般starter的自动配置和业务核心是分开的项目, 如果业务核心的jar包没有引入, 则这个自动配置类是不生效的;
+@ConditionalOnClass(AliyunSms.class)
+@EnableConfigurationProperties(AliyunSmsProperties.class) // 将properties类交给spring管理的快捷方法;
 public class AliyunSmsAutoConfiguration {
 
     @Autowired
     AliyunSmsProperties properties;
 
     @Bean
+    // 此注解作用是为了给使用这个starter的开发者自定义Bean的入口;
+    // 仅当spring中没有指定的Bean存在时, 此配置方法才会执行并往spring中注入一个Bean给其管理, 这也是自动配置精髓所在, 如果开发者自定义了, 则用开发者的, 如果没有则用starter的;
+    @ConditionalOnMissingBean(AliyunSms.class)
     public AliyunSms aliyunSms() throws Exception {
 
         AliyunSmsProperties.Sms sms = properties.getSms();
