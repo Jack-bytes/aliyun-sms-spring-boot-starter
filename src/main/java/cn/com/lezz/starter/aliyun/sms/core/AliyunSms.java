@@ -14,18 +14,34 @@ import java.util.Map;
 
 public class AliyunSms {
 
+    /*--------------------------------------------
+	|             C O N S T A N T S             |
+	============================================*/
+
     private final static Logger LOG = LoggerFactory.getLogger(AliyunSms.class);
 
     private final static Gson GSON = new Gson();
+
+    /*--------------------------------------------
+	|    I N S T A N C E   V A R I A B L E S    |
+	============================================*/
 
     private final Client client;
 
     private final AliyunSmsProperties properties;
 
+    /*--------------------------------------------
+	|         C O N S T R U C T O R S           |
+	============================================*/
+
     public AliyunSms(Client client, AliyunSmsProperties properties) {
         this.client = client;
         this.properties = properties;
     }
+
+    /*--------------------------------------------
+	|               M E T H O D S               |
+	============================================*/
 
     /**
      * 使用配置中第一个signName和templateCode发送短信, 第一个即是index为0;
@@ -82,7 +98,7 @@ public class AliyunSms {
 
         String code = response.getBody().getCode();
         if (!"OK".equals(code)) {
-            LOG.error("短信发送失败, 手机号: {}, 错误码: {}, 错误信息请参照: https://help.aliyun.com/document_detail/101346.html", phoneNumbers, code);
+            LOG.error("短信发送失败, 手机号: {}, 错误码: {}, 错误码详情请参照: https://help.aliyun.com/document_detail/101346.html", phoneNumbers, code);
             return false;
         }
         if (LOG.isDebugEnabled()) {
