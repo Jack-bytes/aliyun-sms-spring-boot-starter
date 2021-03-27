@@ -77,7 +77,7 @@ public class AliyunSms {
 
             List<String> keys = templateParamKeys.get(templateCodeIndex);
             if (templateParamValues == null || keys.size() > templateParamValues.size()) {
-                LOG.error("短信发送失败, 模板参数名与模板参数值数量不一致!");
+                LOG.error("短信发送失败, 模板参数名与模板参数值数量不一致, 手机号码{}!", phoneNumbers);
                 return false;
             }
             //处理params的key和value

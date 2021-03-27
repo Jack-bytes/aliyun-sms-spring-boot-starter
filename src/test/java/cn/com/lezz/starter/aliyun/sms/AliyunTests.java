@@ -16,4 +16,10 @@ public class AliyunTests {
         test.add("sdfsd");
         System.out.println("sdgs" + test.toString() + "sfsfd");
     }
+
+    @Test
+    public void test1() {
+
+        System.out.println((int) (Math.random()* 1000000));
+    }
 }

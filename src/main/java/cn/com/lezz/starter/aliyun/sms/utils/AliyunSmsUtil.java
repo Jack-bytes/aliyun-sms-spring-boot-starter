@@ -9,6 +9,9 @@ public class AliyunSmsUtil {
      */
     public static String generateCode() {
         int code = (int) (Math.random() * 1000000);
+        if (code < 100000) {
+            return generateCode();
+        }
         return Integer.toString(code);
     }
 
