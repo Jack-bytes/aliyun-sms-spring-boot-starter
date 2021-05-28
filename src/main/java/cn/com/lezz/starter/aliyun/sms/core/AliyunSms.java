@@ -47,7 +47,7 @@ public class AliyunSms {
      * 使用配置中第一个signName和templateCode发送短信, 第一个即是index为0;
      *
      * @param phoneNumbers        手机号码, 多个用","分隔;
-     * @param templateParamValues 和模板信息中参数名对应的参数值, 需要和配置的参数名一一对应, 按顺序加入list;
+     * @param templateParamValues 和模板信息中参数名对应的参数值, 需要和配置的参数名一一对应, 按顺序加入list, 如模板信息中没有参数, 则填null;
      * @return 是否成功发送
      */
     public boolean sendSms(String phoneNumbers, List<String> templateParamValues) {
@@ -60,7 +60,7 @@ public class AliyunSms {
      * @param phoneNumbers        手机号码, 多个用","分隔;
      * @param signNameIndex       签名下标index
      * @param templateCodeIndex   模板代码下标index
-     * @param templateParamValues 和模板信息中参数名对应的参数值, 需要和配置的参数名一一对应, 按顺序加入list;
+     * @param templateParamValues 和模板信息中参数名对应的参数值, 需要和配置的参数名一一对应, 按顺序加入list, 如模板信息中没有参数, 则填null;
      * @return 是否成功发送
      */
     public boolean sendSms(String phoneNumbers, int signNameIndex, int templateCodeIndex, List<String> templateParamValues) {
