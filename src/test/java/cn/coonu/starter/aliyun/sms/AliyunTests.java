@@ -1,4 +1,4 @@
-package cn.com.lezz.starter.aliyun.sms;
+package cn.coonu.starter.aliyun.sms;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package cn.com.lezz.starter.aliyun.sms.config;
+package cn.coonu.starter.aliyun.sms.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
 
-@ConfigurationProperties(prefix = "lezz.aliyun")
+@ConfigurationProperties(prefix = "coonu.aliyun")
 @Getter
 @Setter
 public class AliyunSmsProperties {

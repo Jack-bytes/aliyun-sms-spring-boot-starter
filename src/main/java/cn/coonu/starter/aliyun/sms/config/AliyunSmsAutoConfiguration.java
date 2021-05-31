@@ -1,6 +1,6 @@
-package cn.com.lezz.starter.aliyun.sms.config;
+package cn.coonu.starter.aliyun.sms.config;
 
-import cn.com.lezz.starter.aliyun.sms.core.AliyunSms;
+import cn.coonu.starter.aliyun.sms.core.AliyunSms;
 import com.aliyun.dysmsapi20170525.Client;
 import com.aliyun.teaopenapi.models.Config;
 import org.slf4j.Logger;

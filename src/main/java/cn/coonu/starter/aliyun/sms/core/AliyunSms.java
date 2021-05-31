@@ -1,6 +1,6 @@
-package cn.com.lezz.starter.aliyun.sms.core;
+package cn.coonu.starter.aliyun.sms.core;
 
-import cn.com.lezz.starter.aliyun.sms.config.AliyunSmsProperties;
+import cn.coonu.starter.aliyun.sms.config.AliyunSmsProperties;
 import com.aliyun.dysmsapi20170525.Client;
 import com.aliyun.dysmsapi20170525.models.SendSmsRequest;
 import com.aliyun.dysmsapi20170525.models.SendSmsResponse;

@@ -1,4 +1,4 @@
-package cn.com.lezz.starter.aliyun.sms.utils;
+package cn.coonu.starter.aliyun.sms.utils;
 
 public class AliyunSmsUtil {
 
