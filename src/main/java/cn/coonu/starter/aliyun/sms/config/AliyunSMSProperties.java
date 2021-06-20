@@ -9,7 +9,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = "coonu.aliyun")
 @Getter
 @Setter
-public class AliyunSmsProperties {
+public class AliyunSMSProperties {
 
     /**
      * 阿里云key
@@ -24,11 +24,11 @@ public class AliyunSmsProperties {
     /**
      * sms API专有参数
      */
-    private Sms sms;
+    private SMS sms;
 
     @Getter
     @Setter
-    public static class Sms {
+    public static class SMS {
 
         /**
          * 节点URL, 国内除了北京都是这个URL;

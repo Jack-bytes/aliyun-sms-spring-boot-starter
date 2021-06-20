@@ -1,6 +1,6 @@
 package cn.coonu.starter.aliyun.sms.core;
 
-import cn.coonu.starter.aliyun.sms.config.AliyunSmsProperties;
+import cn.coonu.starter.aliyun.sms.config.AliyunSMSProperties;
 import com.aliyun.dysmsapi20170525.Client;
 import com.aliyun.dysmsapi20170525.models.SendSmsRequest;
 import com.aliyun.dysmsapi20170525.models.SendSmsResponse;
@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AliyunSms {
+public class AliyunSMS {
 
     /*--------------------------------------------
 	|             C O N S T A N T S             |
 	============================================*/
 
-    private final static Logger LOG = LoggerFactory.getLogger(AliyunSms.class);
+    private final static Logger LOG = LoggerFactory.getLogger(AliyunSMS.class);
 
     private final static Gson GSON = new Gson();
 
@@ -28,13 +28,13 @@ public class AliyunSms {
 
     private final Client client;
 
-    private final AliyunSmsProperties properties;
+    private final AliyunSMSProperties properties;
 
     /*--------------------------------------------
 	|         C O N S T R U C T O R S           |
 	============================================*/
 
-    public AliyunSms(Client client, AliyunSmsProperties properties) {
+    public AliyunSMS(Client client, AliyunSMSProperties properties) {
         this.client = client;
         this.properties = properties;
     }
@@ -50,8 +50,8 @@ public class AliyunSms {
      * @param templateParamValues 和模板信息中参数名对应的参数值, 需要和配置的参数名一一对应, 按顺序加入list, 如模板信息中没有参数, 则填null;
      * @return 是否成功发送
      */
-    public boolean sendSms(String phoneNumbers, List<String> templateParamValues) {
-        return sendSms(phoneNumbers, 0, 0, templateParamValues);
+    public boolean sendSMS(String phoneNumbers, List<String> templateParamValues) {
+        return sendSMS(phoneNumbers, 0, 0, templateParamValues);
     }
 
     /**
@@ -63,7 +63,7 @@ public class AliyunSms {
      * @param templateParamValues 和模板信息中参数名对应的参数值, 需要和配置的参数名一一对应, 按顺序加入list, 如模板信息中没有参数, 则填null;
      * @return 是否成功发送
      */
-    public boolean sendSms(String phoneNumbers, int signNameIndex, int templateCodeIndex, List<String> templateParamValues) {
+    public boolean sendSMS(String phoneNumbers, int signNameIndex, int templateCodeIndex, List<String> templateParamValues) {
 
         SendSmsRequest request = new SendSmsRequest()
                 .setPhoneNumbers(phoneNumbers)

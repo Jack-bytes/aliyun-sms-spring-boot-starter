@@ -1,6 +1,6 @@
 package cn.coonu.starter.aliyun.sms.utils;
 
-public class AliyunSmsUtil {
+public class AliyunSMSUtil {
 
     /**
      * 生成6位随机验证码

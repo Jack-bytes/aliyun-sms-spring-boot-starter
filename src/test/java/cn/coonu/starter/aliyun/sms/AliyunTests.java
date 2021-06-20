@@ -20,6 +20,6 @@ public class AliyunTests {
     @Test
     public void test1() {
 
-        System.out.println((int) (Math.random()* 1000000));
+        System.out.println((int) (Math.random() * 1000000));
     }
 }
