@@ -13,8 +13,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-// ConditionalOnClass表示只有在指定class存在时, 当前自动配置类才生效.
-// 这个注解在这里是没必要的, 因为业务核心和自动配置在一个jar, 但是一般starter的自动配置和业务核心是分开的项目, 如果业务核心的jar包没有引入, 则这个自动配置类是不生效的;
 @ConditionalOnClass(AliyunSMS.class)
 @EnableConfigurationProperties(AliyunSMSProperties.class) // 将properties类交给spring管理的快捷方法;
 public class AliyunSMSAutoConfiguration {
