@@ -24,11 +24,11 @@
             <artifactId>dysmsapi20170525</artifactId>
             <version>2.0.4</version>
         </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
+        <!-- 官档说可以直接依赖这个, 但是我发现下面个就够了, https://docs.spring.io/spring-boot/docs/2.3.12.RELEASE/reference/html/spring-boot-features.html#boot-features-custom-starter-module-starter 29.5.4 -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter</artifactId>-->
+<!--        </dependency>-->
 
         <!-- 自动配置需要用到的注解等都在这个包或者其依赖包下 -->
         <dependency>
