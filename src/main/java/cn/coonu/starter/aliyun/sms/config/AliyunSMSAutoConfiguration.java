@@ -6,14 +6,14 @@ import com.aliyun.teaopenapi.models.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnClass(AliyunSMS.class)
+@ConditionalOnProperty(prefix = "coonu.aliyun.sms", name = {"sign-names"})//这里表示这个配置项如果配置了, 且值不是false, 那么这个自动配置类生效;
 @EnableConfigurationProperties(AliyunSMSProperties.class) // 将properties类交给spring管理的快捷方法;
 public class AliyunSMSAutoConfiguration {
 
