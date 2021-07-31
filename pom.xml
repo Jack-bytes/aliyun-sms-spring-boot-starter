@@ -36,7 +36,7 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
 
-        <!-- 解析会在application.yml中用到的key-value, 生成文件META-INF/spring-configuration-metadata.json -->
+        <!-- 解析会在application.yml中用到的key-value, 生成文件META-INF/spring-configuration-metadata.json, 可以在实际开发中起到提示作用 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -44,9 +44,11 @@
         </dependency>
 
         <!-- 生成自动配置相关的元数据(jar包中: META-INF/spring-autoconfigure-metadata.properties), 减少启动时间, 不是必须的, 但是最好加上 -->
+        <!--    元数据: 包含自动配置的条件数据, 如满足什么条件自动配置才生效    -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
