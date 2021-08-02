@@ -40,7 +40,7 @@ public class AliyunSMSProperties {
          *
          * application.yml中的配置方式:
          *
-         *   sign-names:
+         *   sign-names(此种方式在自动配置的条件配置时可能导致不能正确自动配置问题):
          *     - xx科技
          *     - xx公司
          *     - 阿里云
@@ -48,7 +48,7 @@ public class AliyunSMSProperties {
          * 或者
          *   sign-names: xx科技, xx公司, 阿里云
          *
-         * 或者
+         * 或者(推荐)
          *   sign-names: [xx科技, xx公司, 阿里云]
          *
          */
@@ -57,7 +57,7 @@ public class AliyunSMSProperties {
         /**
          * 短信模板代码, 需要从阿里云控制台获取, 可以配置多个, 默认用第一个, 可以用index指定使用哪个, index从0开始;
          *
-         * application.yml中配置方式同上;
+         * application.yml中配置方式同上(看上面推荐方式);
          *   template-codes:
          *     - SMS_46546546548
          *     - SMS_64813535551
@@ -69,7 +69,7 @@ public class AliyunSMSProperties {
         /**
          * 和模板代码对应的模板信息中参数名(key), 必须和模板代码一一对应, 没有的用[]占位;
          *
-         * application.yml中配置方式:
+         * application.yml中配置方式(看上面推荐方式):
          *   template-param-keys:
          *     - [name, code]
          *     - []
